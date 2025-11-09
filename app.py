@@ -73,9 +73,9 @@ inject_theme(); topbar("HMB", 50, "SM_cable_bottom")
 # Data
 # -------------------------------
 AWG_DB = {
-    "12 AWG (2.053 mm)": {"diam_mm":2.053, "area_mm2":3.31},
-    "14 AWG (1.628 mm)": {"diam_mm":1.628, "area_mm2":2.08},
     "16 AWG (1.291 mm)": {"diam_mm":1.291, "area_mm2":1.31},
+    "14 AWG (1.628 mm)": {"diam_mm":1.628, "area_mm2":2.08},
+    "12 AWG (2.053 mm)": {"diam_mm":2.053, "area_mm2":3.31},
     "10 AWG (2.588 mm)": {"diam_mm":2.588, "area_mm2":5.26},
     "8 AWG (3.264 mm)":  {"diam_mm":3.264, "area_mm2":8.37},
     "6 AWG (4.115 mm)":  {"diam_mm":4.115, "area_mm2":13.30},
@@ -250,7 +250,7 @@ s_left, s_right = st.columns([1.1,1], gap="large")
 with s_left:
     st.caption("Loads & factors")
     loads_unit = st.radio("Axial load units", ["lbf","N"], index=0, horizontal=True)
-    default_loads = [20,40,60,80,100,200]
+    default_loads = [20,40,60,80]
     loads_str = st.text_input(f"Axial loads (comma-separated) [{loads_unit}]",
                               value=",".join(str(x) for x in default_loads))
     try:
